@@ -1,7 +1,8 @@
-//import '../css/app.css';
+import '../css/index.css';
 import './bootstrap';
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/lara-dark-blue/theme.css";
+import 'primeicons/primeicons.css';
 
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
