@@ -28,18 +28,20 @@ export default function Login({
         <main style={{ width: "100vw", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
             <Head title="Login" />
             <Card style={{ padding: "2rem" }}>
-               <form style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+               <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                    <h1>Synchronize Your Data</h1>
                    <p>And Continue Tracking on Multiple Devices</p>
-                   <Button style={{ gap: "1rem", marginTop: "1.5rem" }}>
-                       <span className="pi pi-google"></span>
-                       <span>Continue With Google</span>
-                   </Button>
+                   <a href={route("auth.google")}>
+                       <Button style={{ gap: "1rem", marginTop: "1.5rem" }}>
+                           <span className="pi pi-google"></span>
+                           <span>Continue With Google</span>
+                       </Button>
+                   </a>
                    <Button style={{ gap: "1rem", marginTop: "1.5rem" }}>
                        <span className="pi pi-facebook"></span>
                        <span>Continue With Facebook</span>
                    </Button>
-               </form>
+               </div>
             </Card>
         </main>
     );

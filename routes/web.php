@@ -1,9 +1,16 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\GoogleAuthController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
+//Google OAuth
+Route::get("/auth/google", [GoogleAuthController::class, "redirect"])
+    ->name("auth.google");
+Route::get("/auth/google/callback", [GoogleAuthController::class, "callback"])
+    ->name("auth.google.callback");
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
