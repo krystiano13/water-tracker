@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\FacebookAuthController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -11,6 +12,12 @@ Route::get("/auth/google", [GoogleAuthController::class, "redirect"])
     ->name("auth.google");
 Route::get("/auth/google/callback", [GoogleAuthController::class, "callback"])
     ->name("auth.google.callback");
+
+//Facebook OAuth
+Route::get("/auth/facebook", [FacebookAuthController::class, "redirect"])
+    ->name("auth.facebook");
+Route::get("/auth/facebook/callback", [FacebookAuthController::class, "callback"])
+    ->name("auth.facebook.callback");
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
